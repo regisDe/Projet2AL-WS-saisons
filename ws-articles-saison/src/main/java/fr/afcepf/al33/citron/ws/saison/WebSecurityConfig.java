@@ -72,6 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                  "/**/*.css",
                  "/**/*.js").permitAll()
 	 		   .antMatchers("/rest/auth/**").permitAll()
+	 		   //.antMatchers("/rest/**").permitAll()
 	 		   .antMatchers("/rest/public/**").permitAll()
 	 		   .antMatchers("/service/**").permitAll() //pour cxf/soap
 	 		   //.anyRequest().permitAll()

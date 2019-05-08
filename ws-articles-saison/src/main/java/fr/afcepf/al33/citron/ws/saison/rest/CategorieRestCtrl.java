@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.afcepf.al33.citron.ws.saison.entity.Categorie;
-import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaisonImpl;
+import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaison;
 
 @CrossOrigin("*")//pour accepter de répondre à des appels ajax 
                  //provenant d'autres domaines/applications/...
@@ -24,11 +24,12 @@ import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaisonImpl;
 public class CategorieRestCtrl {
 
 	@Autowired //injection du "business service" 
-	private ServiceAdminArticleSaisonImpl serviceAdminArticleSaison;
+	private ServiceAdminArticleSaison serviceAdminArticleSaison;
+
 	
-	//URL= http://localhost:7878/adminArticleSaisonWebService/rest/categories
+	//URL= http://localhost:7878/articlesSaison/rest/categories
 	//en mode POST avec la partie body invisible de la requete contenant
-	//{ "nom" : "nomxy"}
+	//{ "nom" : "nom_categorie"}
 	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value="" , method=RequestMethod.POST)
 	public Categorie createOrUpdateCategorie(@RequestBody @Valid Categorie categorie) {
@@ -37,7 +38,8 @@ public class CategorieRestCtrl {
 	}
 	
 	
-	//URL= http://localhost:7878/adminArticleSaisonWebService/rest/categories/1
+	//URL= http://localhost:7878/articlesSaison/rest/categories/1
+	//en mode DELETE
 	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value="/{idCategorie}" , method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteCategorieById(@PathVariable("idCategorie") 

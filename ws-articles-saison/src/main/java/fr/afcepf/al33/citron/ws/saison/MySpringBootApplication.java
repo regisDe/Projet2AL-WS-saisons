@@ -15,12 +15,16 @@ public class MySpringBootApplication extends SpringBootServletInitializer {
 		//SpringApplication.run(MySpringBootApplication.class, args);
 		
 		SpringApplication app = new SpringApplication(MySpringBootApplication.class);
-		//app.setLogStartupInfo(false);
+		app.setLogStartupInfo(true);
 		app.setAdditionalProfiles("web.dev");
 		ConfigurableApplicationContext context = app.run(args);
 		
 		System.out.println("http://localhost:7878/articlesSaison/index.html");
-		
+		System.out.println("http://localhost:7878/articlesSaison/service (liste des services SOAP)");
+		System.out.println("http://localhost:7878/articlesSaison/rest/public/categories (REST GET)");	
+		System.out.println("http://localhost:7878/articlesSaison/rest/public/categories/1 (REST GET)");	
+		System.out.println("http://localhost:7878/articlesSaison/rest/public/articles (REST GET)");	
+		System.out.println("http://localhost:7878/articlesSaison/rest/public/articles/1 (REST GET)");	
 		//securité par défaut si la classe WebSecurityConfig n'existe pas dans l'application:
 		//System.out.println("default username=user et password précisé au démarrage");
 	}

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,8 +34,8 @@ public class Article implements Serializable {
 	private int debutSaison;
 	private int finSaison;
 	
-	@ManyToOne
-	@JoinColumn(name="idCategorie") //nom de la colonne clef etrangère 
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="categorie_id") //nom de la colonne clef etrangère 
 	private Categorie categorie;
 
 	@Override

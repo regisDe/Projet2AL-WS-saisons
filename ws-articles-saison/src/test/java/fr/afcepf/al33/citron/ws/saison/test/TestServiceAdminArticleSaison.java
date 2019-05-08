@@ -13,14 +13,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import fr.afcepf.al33.citron.ws.saison.MySpringBootApplication;
 import fr.afcepf.al33.citron.ws.saison.entity.Categorie;
-import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaisonImpl;
+import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaison;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes= {MySpringBootApplication.class})
 public class TestServiceAdminArticleSaison {
     
     @Autowired
-    private ServiceAdminArticleSaisonImpl serviceAdminArticleSaison;
+    private ServiceAdminArticleSaison serviceAdminArticleSaison;
  
     @Test
     public void creationCategorie() {
