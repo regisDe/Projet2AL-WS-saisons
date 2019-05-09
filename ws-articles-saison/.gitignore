@@ -22,3 +22,4 @@ HELP.md
 
 #/.gitignore
 /bin/
+/target/
