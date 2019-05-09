@@ -21,3 +21,4 @@ HELP.md
 .sts4-cache
 
 #/.gitignore
+/bin/
