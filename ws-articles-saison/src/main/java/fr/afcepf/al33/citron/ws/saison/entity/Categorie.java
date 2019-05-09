@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +31,7 @@ public class Categorie {
 	
 	private String nom;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="categorie",fetch=FetchType.LAZY)
 	//mappedBy="nom java de la relation inverse manyToOne"
 	private List<Article> articles;	

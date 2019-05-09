@@ -1,14 +1,13 @@
 package fr.afcepf.al33.citron.ws.saison.rest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +34,7 @@ public class CategorieRestPublicCtrl {
 	@RequestMapping(value="/{idCategorie}", method=RequestMethod.GET)
 	public Categorie categorieById(@Valid Integer idCategorie) {
     	Categorie categorie = serviceAdminArticleSaison.categorieParId(idCategorie);
-    	logger.debug("categorieById("+ idCategorie + ") : " + categorie.getNom());
+    	//logger.debug("categorieById("+ idCategorie + ") : " + categorie.getNom());
 		return categorie;		
 	}
 

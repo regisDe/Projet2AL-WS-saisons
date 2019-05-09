@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.afcepf.al33.citron.ws.saison.entity.Article;
+import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaison;
 import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaisonImpl;
 
 @CrossOrigin("*")//pour accepter de répondre à des appels ajax 
@@ -24,7 +25,7 @@ import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaisonImpl;
 public class ArticleRestCtrl {
 
 	@Autowired //injection du "business service" 
-	private ServiceAdminArticleSaisonImpl serviceAdminArticleSaison;
+	private ServiceAdminArticleSaison serviceAdminArticleSaison;
 	
 	//URL= http://localhost:7878/adminArticleSaisonWebService/rest/articles
 	//en mode POST avec la partie body invisible de la requete contenant

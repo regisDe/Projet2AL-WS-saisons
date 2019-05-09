@@ -1,5 +1,6 @@
 INSERT INTO Categorie(nom) VALUES('fruits');
 INSERT INTO Categorie(nom) VALUES('légumes');
+
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('abricot', 1, 7, 8);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('ail', 2, 4, 8);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('ananas', 1, 11, 3);
@@ -75,7 +76,7 @@ INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('pomme d
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('potimarron', 2, 10, 11);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('potiron', 2, 7, 10);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('prune', 1, 8, 10);
-INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('quetsche', 1, 8, 10);*
+INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('quetsche', 1, 8, 10);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('radis', 2, 4, 7);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('raisin', 1, 9, 10);
 INSERT INTO Article(nom, categorie_id, debut_saison, fin_saison) VALUES('reine-claude', 1, 8, 9);

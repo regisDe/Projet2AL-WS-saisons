@@ -2,7 +2,6 @@ package fr.afcepf.al33.citron.ws.saison;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -21,6 +20,7 @@ public class MySpringBootApplication extends SpringBootServletInitializer {
 		
 		System.out.println("http://localhost:7878/articlesSaison/index.html");
 		System.out.println("http://localhost:7878/articlesSaison/service (liste des services SOAP)");
+		System.out.println("http://localhost:7878/articlesSaison/service/serviceClientArticleSaison?wsdl");
 		System.out.println("http://localhost:7878/articlesSaison/rest/public/categories (REST GET)");	
 		System.out.println("http://localhost:7878/articlesSaison/rest/public/categories/1 (REST GET)");	
 		System.out.println("http://localhost:7878/articlesSaison/rest/public/articles (REST GET)");	
