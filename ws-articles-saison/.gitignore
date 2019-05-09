@@ -1,0 +1,23 @@
+/.metadata/
+.classpath
+.project
+.settings/
+.recommenders/
+*.class
+
+HELP.md
+*/target/**
+*/bin/**
+
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+#/.gitignore
