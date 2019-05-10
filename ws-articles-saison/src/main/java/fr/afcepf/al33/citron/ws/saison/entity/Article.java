@@ -4,14 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,9 +35,8 @@ public class Article implements Serializable {
 	private int debutSaison;
 	private int finSaison;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="categorie_id") //nom de la colonne clef etrangère 
-	@JsonIgnore // à supprimer (voir le contenu de la BDD article)
 	private Categorie categorie;
 
 	@Override

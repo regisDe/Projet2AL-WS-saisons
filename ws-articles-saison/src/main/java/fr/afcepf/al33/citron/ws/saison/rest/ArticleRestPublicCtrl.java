@@ -35,7 +35,8 @@ public class ArticleRestPublicCtrl {
 	@RequestMapping(value="/{idArticle}", method=RequestMethod.GET)
 	public Article articleById(@Valid @PathVariable("idArticle") Integer idArticle) {
     	Article article = serviceAdminArticleSaison.articleParId(idArticle);
-		return article;		
+		//System.out.println("article.getCategorie() = " + article.getCategorie());
+    	return article;		
 	}
 
 	
