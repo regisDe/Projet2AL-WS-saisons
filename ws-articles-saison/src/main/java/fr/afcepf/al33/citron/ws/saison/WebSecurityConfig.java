@@ -18,7 +18,7 @@ import fr.afcepf.al33.citron.ws.saison.security.util.MyNoAuthenticationEntryPoin
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)//necessary for @PreAuthorize("hasRole('ADMIN or ...')")
+//@EnableGlobalMethodSecurity(prePostEnabled = true) //necessary for @PreAuthorize("hasRole('ADMIN or ...')") TEST
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -72,11 +72,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                  "/**/*.css",
                  "/**/*.js").permitAll()
 	 		   .antMatchers("/rest/auth/**").permitAll()
-	 		   //.antMatchers("/rest/**").permitAll()
-	 		   .antMatchers("/rest/public/**").permitAll()
 	 		   .antMatchers("/service/**").permitAll() //pour cxf/soap
-	 		   //.anyRequest().permitAll()
-	 		   .anyRequest().authenticated()
+	 		   .anyRequest().permitAll() // bascule permission de toutes les URL * * * pour TEST * * *
+	 		   //.anyRequest().authenticated() // bascule permission de toutes les URL * * * pour TEST * * * 
 	 		   //.anyRequest().hasRole("ADMIN")
 	 		   .and().cors();
 	 			//.and().httpBasic()
