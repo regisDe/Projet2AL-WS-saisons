@@ -41,20 +41,17 @@ public class ServiceClientArticleSaisonImpl implements ServiceClientArticleSaiso
 
 	@Override
 	public List<Article> listeArticlesParCategorie(Categorie categorie) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleDao.findByCategorie(categorie);
 	}
 
 	@Override
 	public List<Article> listeArticlesParMois(int mois) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleDao.findAllByMois(mois);
 	}
 
 	@Override
 	public List<Article> listeArticlesParCategorieEtMois(Categorie categorie, int mois) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleDao.findAllByCategorieAndMois(categorie, mois);
 	}
 
 }
