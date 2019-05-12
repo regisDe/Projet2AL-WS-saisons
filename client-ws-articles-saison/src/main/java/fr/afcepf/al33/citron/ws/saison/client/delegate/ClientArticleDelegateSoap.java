@@ -3,6 +3,7 @@ package fr.afcepf.al33.citron.ws.saison.client.delegate;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.xml.ws.BindingProvider;
 
@@ -14,13 +15,18 @@ import fr.afcepf.al33.citron.ws.saison.ws.ServiceClientArticleSaisonImplService;
 public class ClientArticleDelegateSoap implements ClientArticleDelegate {
 
 	private ServiceClientArticleSaison proxyWsServiceClientArticleSaison;
+		
+	private ResourceBundle bundle = ResourceBundle.getBundle("application");
+	private String wsHost = bundle.getString("webservice.host");
+	private String wsPort = bundle.getString("webservice.port");
+	
 	public ClientArticleDelegateSoap() {
 		//code d'appel du WS soap qui s'appuie sur le code généré
 		//par wsimport -keep -... URL_WSDL
 		//.... (...Service).get...Port()
 		try {
 			String sEndPointUrl = 
-					"http://localhost:7878/articlesSaison/service/serviceClientArticleSaison";
+					"http://" + wsHost + ":" + wsPort + "/articlesSaison/service/serviceClientArticleSaison";
 			String sWsdlUrl = sEndPointUrl + "?wsdl";
 			URL wsdlUrl = new URL(sWsdlUrl);
 			this.proxyWsServiceClientArticleSaison

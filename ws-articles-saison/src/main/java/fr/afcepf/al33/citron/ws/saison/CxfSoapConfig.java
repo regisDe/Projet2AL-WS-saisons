@@ -38,8 +38,8 @@ public class CxfSoapConfig {
         EndpointImpl endpoint = new EndpointImpl(bus, serviceClientArticleSaison /* implementor */);
         endpoint.publish("/serviceClientArticleSaison");
         //URL soap complete:
-        // http://localhost:7878/articlesSaison/service/serviceClientArticleSaison
-        // http://localhost:7878/articlesSaison/service/serviceClientArticleSaison?wsdl
+        // http://localhost:{port}/articlesSaison/service/serviceClientArticleSaison
+        // http://localhost:{port}/articlesSaison/service/serviceClientArticleSaison?wsdl
         return endpoint;
     }
  
