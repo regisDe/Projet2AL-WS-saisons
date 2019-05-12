@@ -32,36 +32,53 @@ public class AdminArticleDelegateRest implements AdminArticleDelegate {
 	
 
 	public CategorieDto categorieParId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		WebTarget categoriesTarget = jaxrs2client.target(debutUrlCategoriesPublic + "/" + id);
+		CategorieDto categorie = 
+				categoriesTarget.request(MediaType.APPLICATION_JSON_TYPE)
+                .get().readEntity(CategorieDto.class);
+		return categorie;
 	}
 
 
-	public List<CategorieDto> ListeCategories() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CategorieDto> listeCategories() {
+		WebTarget categoriesTarget = jaxrs2client.target(debutUrlCategoriesPublic);
+		CategorieDto[] tabCategories= 
+				categoriesTarget.request(MediaType.APPLICATION_JSON_TYPE)
+                .get().readEntity(CategorieDto[].class);
+		return Arrays.asList(tabCategories);
 	}
 
 
 	public CategorieDto sauvegarderCategorie(CategorieDto categorie) {
-		// TODO Auto-generated method stub
-		return null;
+		WebTarget categoriesTarget = jaxrs2client.target(debutUrlCategories);
+		Response responseSavedCategorie =  
+				categoriesTarget.request(MediaType.APPLICATION_JSON_TYPE)
+		            .post(Entity.entity(categorie, MediaType.APPLICATION_JSON_TYPE) );
+		if(responseSavedCategorie.getStatus()==200 /*OK*/) {
+			return responseSavedCategorie.readEntity(CategorieDto.class);
+		}
+		else 
+			return null;
 	}
 
 
 	public void supprimerCategorieParId(int id) {
-		// TODO Auto-generated method stub
-		
+		WebTarget categoriesTarget = jaxrs2client.target(debutUrlCategories + "/" + id);
+		categoriesTarget.request(MediaType.APPLICATION_JSON_TYPE).delete();
+		return;
 	}
 
 
 	public ArticleDto articleParId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		WebTarget articlesTarget = jaxrs2client.target(debutUrlArticlesPublic + "/" + id);
+		ArticleDto article = 
+				articlesTarget.request(MediaType.APPLICATION_JSON_TYPE)
+                .get().readEntity(ArticleDto.class);
+		return article;
 	}
 
 
-	public List<ArticleDto> ListeArticles() {
+	public List<ArticleDto> listeArticles() {
 		WebTarget articlesTarget = jaxrs2client.target(debutUrlArticlesPublic);
 		ArticleDto[] tabArticles= 
 				articlesTarget.request(MediaType.APPLICATION_JSON_TYPE)
@@ -82,8 +99,9 @@ public class AdminArticleDelegateRest implements AdminArticleDelegate {
 	}
 
 	public void supprimerArticleParId(int id) {
-		// TODO Auto-generated method stub
-		
+		WebTarget articlesTarget = jaxrs2client.target(debutUrlArticles + "/" + id);
+		articlesTarget.request(MediaType.APPLICATION_JSON_TYPE).delete();
+		return;
 	}
 
 }

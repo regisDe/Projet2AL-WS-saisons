@@ -12,12 +12,12 @@ import fr.afcepf.al33.citron.ws.saison.client.dto.CategorieDto;
 
 public interface AdminArticleDelegate {
 	CategorieDto 		categorieParId(int id);
-	List<CategorieDto> ListeCategories();
+	List<CategorieDto> 	listeCategories();
 	CategorieDto 		sauvegarderCategorie(CategorieDto categorie);
-	void			supprimerCategorieParId(int id);
+	void				supprimerCategorieParId(int id);
 	
-	ArticleDto 		articleParId(int id);
-	List<ArticleDto> 	ListeArticles();
-	ArticleDto 		sauvegarderArticle(ArticleDto article);
-	void			supprimerArticleParId(int id);
+	ArticleDto 			articleParId(int id);
+	List<ArticleDto> 	listeArticles();
+	ArticleDto 			sauvegarderArticle(ArticleDto article);
+	void				supprimerArticleParId(int id);
 }
