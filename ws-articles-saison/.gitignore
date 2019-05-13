@@ -6,8 +6,8 @@
 *.class
 
 HELP.md
-*/target/**
-*/bin/**
+**/target/**
+**/bin/**
 
 !.mvn/wrapper/maven-wrapper.jar
 
