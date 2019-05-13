@@ -9,6 +9,8 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Article;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Categorie;
 
 
 /**
@@ -19,7 +21,8 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "ServiceClientArticleSaison", targetNamespace = "http://ws.saison.ws.citron.al33.afcepf.fr/")
 @XmlSeeAlso({
-    ObjectFactory.class
+    fr.afcepf.al33.citron.ws.saison.ws.ObjectFactory.class,
+    fr.afcepf.al33.citron.ws.saison.ws.entity.ObjectFactory.class
 })
 public interface ServiceClientArticleSaison {
 
@@ -27,7 +30,7 @@ public interface ServiceClientArticleSaison {
     /**
      * 
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Article>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Article>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -38,7 +41,7 @@ public interface ServiceClientArticleSaison {
     /**
      * 
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Categorie>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Categorie>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -50,7 +53,7 @@ public interface ServiceClientArticleSaison {
      * 
      * @param nom
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Article>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Article>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -64,7 +67,7 @@ public interface ServiceClientArticleSaison {
      * 
      * @param categorie
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Article>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Article>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -78,7 +81,7 @@ public interface ServiceClientArticleSaison {
      * 
      * @param mois
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Article>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Article>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -93,7 +96,7 @@ public interface ServiceClientArticleSaison {
      * @param categorie
      * @param mois
      * @return
-     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.Article>
+     *     returns java.util.List<fr.afcepf.al33.citron.ws.saison.ws.entity.Article>
      */
     @WebMethod
     @WebResult(targetNamespace = "")

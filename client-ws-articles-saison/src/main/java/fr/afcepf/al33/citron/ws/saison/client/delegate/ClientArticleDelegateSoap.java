@@ -7,8 +7,8 @@ import java.util.ResourceBundle;
 
 import javax.xml.ws.BindingProvider;
 
-import fr.afcepf.al33.citron.ws.saison.ws.Article;
-import fr.afcepf.al33.citron.ws.saison.ws.Categorie;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Article;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Categorie;
 import fr.afcepf.al33.citron.ws.saison.ws.ServiceClientArticleSaison;
 import fr.afcepf.al33.citron.ws.saison.ws.ServiceClientArticleSaisonImplService;
 

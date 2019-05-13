@@ -2,8 +2,8 @@ package fr.afcepf.al33.citron.ws.saison.client.delegate;
 
 import java.util.List;
 
-import fr.afcepf.al33.citron.ws.saison.ws.Article;
-import fr.afcepf.al33.citron.ws.saison.ws.Categorie;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Article;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Categorie;
 
 // cette interface sera implémentée par:
 //		ClientArticleDelegateSoap

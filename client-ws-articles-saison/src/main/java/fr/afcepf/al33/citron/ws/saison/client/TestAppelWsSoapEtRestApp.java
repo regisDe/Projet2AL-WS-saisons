@@ -13,8 +13,8 @@ import fr.afcepf.al33.citron.ws.saison.client.delegate.ClientArticleDelegate;
 import fr.afcepf.al33.citron.ws.saison.client.delegate.ClientArticleDelegateSoap;
 import fr.afcepf.al33.citron.ws.saison.client.dto.ArticleDto;
 import fr.afcepf.al33.citron.ws.saison.client.dto.CategorieDto;
-import fr.afcepf.al33.citron.ws.saison.ws.Article;
-import fr.afcepf.al33.citron.ws.saison.ws.Categorie;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Article;
+import fr.afcepf.al33.citron.ws.saison.ws.entity.Categorie;
 
 public class TestAppelWsSoapEtRestApp {
 

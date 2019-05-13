@@ -3,8 +3,6 @@ package fr.afcepf.al33.citron.ws.saison.ws;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ResourceBundle;
-
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
@@ -26,18 +24,13 @@ public class ServiceClientArticleSaisonImplService
 
     private final static URL SERVICECLIENTARTICLESAISONIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException SERVICECLIENTARTICLESAISONIMPLSERVICE_EXCEPTION;
-    private final static QName SERVICECLIENTARTICLESAISONIMPLSERVICE_QNAME = new QName("http://ws.saison.ws.citron.al33.afcepf.fr/", "ServiceClientArticleSaisonImplService");    
-    
+    private final static QName SERVICECLIENTARTICLESAISONIMPLSERVICE_QNAME = new QName("http://ws.saison.ws.citron.al33.afcepf.fr/", "ServiceClientArticleSaisonImplService");
+
     static {
-
-    	ResourceBundle bundle = ResourceBundle.getBundle("application");
-    	String wsHost = bundle.getString("webservice.host");
-    	String wsPort = bundle.getString("webservice.port");
-
-    	URL url = null;
+        URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://" + wsHost + ":" + wsPort + "/articlesSaison/service/serviceClientArticleSaison?wsdl");
+            url = new URL("http://localhost:7878/articlesSaison/service/serviceClientArticleSaison?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

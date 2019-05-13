@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 
 @Entity
+@XmlType( namespace="http://entity.ws.saison.ws.citron.al33.afcepf.fr/")
 public class Article implements Serializable {
 	private static final long serialVersionUID = 1L;
 
