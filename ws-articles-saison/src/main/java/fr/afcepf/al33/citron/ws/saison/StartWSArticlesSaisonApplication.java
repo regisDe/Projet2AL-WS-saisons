@@ -1,5 +1,7 @@
 package fr.afcepf.al33.citron.ws.saison;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
 import org.springframework.boot.SpringApplication;
@@ -15,8 +17,13 @@ public class StartWSArticlesSaisonApplication extends SpringBootServletInitializ
 	public static void main(String[] args) {
 
 		ResourceBundle bundle = ResourceBundle.getBundle("application");
-		String wsHost = bundle.getString("webservice.host");
-		String wsPort = bundle.getString("server.port");
+		String wsHost = "{web service host}";
+		try {
+			wsHost = Inet4Address.getLocalHost().getHostAddress();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		String wsPort = "7878";
 
 		//SpringApplication.run(MySpringBootApplication.class, args);
 		
@@ -26,7 +33,7 @@ public class StartWSArticlesSaisonApplication extends SpringBootServletInitializ
 		ConfigurableApplicationContext context = app.run(args);
 		
 		System.out.println("\n");
-		System.out.println("adresse du web service lue dans application.properties : " + wsHost + ":" + wsPort + "\n");
+		System.out.println("adresse du web service lue dans application.properties : " + wsHost + ":" + wsPort + " (peut être une adresse du localhost)\n");
 		System.out.println("http://" + wsHost + ":" + wsPort + "/articlesSaison/index.html");
 		System.out.println("http://" + wsHost + ":" + wsPort + "/articlesSaison/service (liste des services SOAP)");
 		System.out.println("http://" + wsHost + ":" + wsPort + "/articlesSaison/service/serviceClientArticleSaison?wsdl");
