@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import fr.afcepf.al33.citron.ws.saison.MySpringBootApplication;
+import fr.afcepf.al33.citron.ws.saison.StartWSArticlesSaisonApplication;
 import fr.afcepf.al33.citron.ws.saison.entity.Article;
 import fr.afcepf.al33.citron.ws.saison.entity.Categorie;
 import fr.afcepf.al33.citron.ws.saison.ws.ServiceAdminArticleSaison;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= {MySpringBootApplication.class})
+@SpringBootTest(classes= {StartWSArticlesSaisonApplication.class})
 public class TestServiceAdminArticleSaison {
     
     @Autowired
     private ServiceAdminArticleSaison serviceAdminArticleSaison;
  
-    @Test
+    //@Test
     public void creationCategorie() {
         // given
         Categorie categorie = new Categorie(0, "épices");        
@@ -31,7 +31,7 @@ public class TestServiceAdminArticleSaison {
         assertThat(returnCategorie.getNom(), is(equalTo(categorie.getNom())));
     } 	
     
-    @Test
+    //@Test
     public void creationArticle() {
         // given
         Categorie categorie = new Categorie(0, "épices");        

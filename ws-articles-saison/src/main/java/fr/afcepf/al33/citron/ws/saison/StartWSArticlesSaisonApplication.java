@@ -11,7 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 // de @Configuration + @EnableAutoConfiguration + @ComponentScan/current package
 @SpringBootApplication
 //@EntityScan( basePackages = {"fr.afcepf.al33.entity"} )
-public class MySpringBootApplication extends SpringBootServletInitializer {
+public class StartWSArticlesSaisonApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 
 		ResourceBundle bundle = ResourceBundle.getBundle("application");
@@ -20,7 +20,7 @@ public class MySpringBootApplication extends SpringBootServletInitializer {
 
 		//SpringApplication.run(MySpringBootApplication.class, args);
 		
-		SpringApplication app = new SpringApplication(MySpringBootApplication.class);
+		SpringApplication app = new SpringApplication(StartWSArticlesSaisonApplication.class);
 		app.setLogStartupInfo(true);
 		app.setAdditionalProfiles("web.dev");
 		ConfigurableApplicationContext context = app.run(args);
